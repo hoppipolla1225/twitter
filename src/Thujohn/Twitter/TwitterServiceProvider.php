@@ -67,7 +67,8 @@ class TwitterServiceProvider extends ServiceProvider {
 			$this->package('thujohn/twitter', 'ttwitter', __DIR__.'/../..');
 		}
 
-		$this->app->singleton(Twitter::class, function ($app) {
+		$this->app->singleton(Twitter::class, function ($app)
+		{
 		     return new Twitter($app['config'], $app['session.store']);
 		});
 	}
